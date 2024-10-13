@@ -2,10 +2,6 @@ import SwiftUI
 import Helpers
 import Flow
 
-#if os(macOS)
-#error("macOS not currently supported")
-#endif
-
 /// A picker for selecting from multiple options.
 ///
 /// A MultiPicker can be initialized with several configurations, depending on what kind of binding is passed into the initializer. It can be configured to select between...
@@ -389,7 +385,7 @@ struct MultiPicker_Previews: PreviewProvider {
                         }
                     }
                     #if !os(macOS)
-                    //                .pickerStyle(.navigationLink)
+                    .pickerStyle(.navigationLink)
                     #endif
                     Section("MultiPicker") {
                         MultiPicker("Only One", selection: oneSelection) {
@@ -447,9 +443,8 @@ struct MultiPicker_Previews: PreviewProvider {
                             }
                         }
                     }
-                    .pickerStyle(.navigationLink)
                     #if !os(macOS)
-                    //                .pickerStyle(.navigationLink)
+                    .pickerStyle(.navigationLink)
                     #endif
                     Section("MultiPicker") {
                         MultiPicker("Only One", selection: oneSelection) {
